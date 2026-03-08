@@ -12,8 +12,10 @@
       "args": [
         "src.app:app",
         "--reload",
-        "--reload-include",
-        "src/static/*"
+        // watching the whole src tree includes static; wildcard patterns blow up in PowerShell
+        // if you really need to limit directories use --reload-dir instead:
+        // "--reload-dir",
+        // "src/static"
       ],
       "jinja": true
     }
